@@ -1,5 +1,5 @@
 const fs = require("fs");
-const frontmatter = require("@github-docs/frontmatter");
+const graymatter = require("gray-matter");
 const { createCanvas, loadImage, registerFont } = require("canvas");
 
 module.exports = function emji(config) {
@@ -8,10 +8,7 @@ module.exports = function emji(config) {
   registerFont(font, { family: "allfonts" });
 
   return async (markdown) => {
-    const { data, content, errors } = frontmatter(markdown);
-    if (!data || errors.length > 0) {
-      return;
-    }
+    const { data, content } = graymatter(markdown);
     const { title, description } = data;
     const canvas = createCanvas(width, height);
     const ctx = canvas.getContext("2d");
