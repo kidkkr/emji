@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/kidkkr/emji#readme",
   "dependencies": {
-    "canvas": "^2.6.1",
+    "canvas": "^2.7.0",
     "gray-matter": "^4.0.2"
   }
 }
